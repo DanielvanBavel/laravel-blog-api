@@ -11,7 +11,7 @@ use App\Models\Post;
 class BlogControllerApi extends Controller
 {
     public function getAllPosts() {
-        return Post::with(['category', 'alineas', 'comments'])->get();
+        return Post::with(['category', 'alineas', 'comments'])->orderBy('created_at', 'desc')->get();
     }
 
     public function getPost($id) {
