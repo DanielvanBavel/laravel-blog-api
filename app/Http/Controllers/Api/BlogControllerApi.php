@@ -23,7 +23,7 @@ class BlogControllerApi extends Controller
     }
 
     public function getCategorie($id) {
-        return Category::with(['posts.comments', 'posts.alineas'])->where('id', '=', $id)->get();
+        return Category::with(['posts'])->where('id', '=', $id)->get();
     }
 
     public function getHighlightedPosts() {
